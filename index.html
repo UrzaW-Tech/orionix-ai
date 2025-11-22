@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Orionix AI – Automatización de ventas con IA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Orionix AI automatiza la atención al cliente y las ventas con inteligencia artificial, para que tu negocio responda 24/7 y venda más sin aumentar el equipo.">
+  <meta name="description" content="Orionix AI automatiza la atención al cliente y las ventas con inteligencia artificial.">
   <style>
     :root {
       --bg: #020617;
@@ -132,34 +132,10 @@
       box-shadow: 0 18px 44px rgba(56, 189, 248, 0.7);
     }
 
-    /* Clase para cuando el botón está cargando */
     .btn-loading {
         opacity: 0.7;
         pointer-events: none;
         cursor: not-allowed;
-    }
-
-    .btn-secondary {
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.85);
-      color: var(--muted);
-      font-size: 0.86rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: border 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent-soft);
-      color: var(--text);
-      background: rgba(15, 23, 42, 1);
-      transform: translateY(-1px);
     }
 
     main {
@@ -175,30 +151,7 @@
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.96));
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-    }
-
-    .eyebrow-tag {
-      padding: 0.08rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(45, 212, 191, 0.16);
-      color: #a5f3fc;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-    }
-
+    /* Modificación: Mantenemos estilos de título pero adaptados */
     .hero-title {
       font-size: clamp(2.1rem, 4vw, 2.7rem);
       font-weight: 800;
@@ -207,64 +160,11 @@
       margin-bottom: 0.9rem;
     }
 
-    .hero-title span {
-      background: linear-gradient(to right, #22d3ee, #38bdf8, #818cf8);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
     .hero-sub {
       font-size: 0.98rem;
       color: var(--muted);
       max-width: 32rem;
       margin-bottom: 1.3rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      align-items: center;
-      margin-bottom: 1.3rem;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .hero-note-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.25);
-    }
-
-    .hero-bullets {
-      margin-top: 0.9rem;
-      display: grid;
-      gap: 0.35rem;
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .hero-bullet {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-    }
-
-    .hero-bullet-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      margin-top: 0.35rem;
     }
 
     .hero-media {
@@ -288,7 +188,6 @@
       display: block;
       object-fit: cover;
     }
-
 
     .hero-media-tag {
       position: absolute;
@@ -460,9 +359,9 @@
       margin-top: 0.15rem;
     }
 
-    /* ESTILOS DEL MENSAJE DE ÉXITO (NUEVO) */
+    /* ESTILOS DEL MENSAJE DE ÉXITO */
     #success-message {
-        display: none; /* Oculto por defecto */
+        display: none;
         text-align: center;
         padding: 3rem 1.5rem;
         background: rgba(15, 23, 42, 0.96);
@@ -527,20 +426,14 @@
     @media (max-width: 960px) {
       .hero {
         grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero {
         padding-top: 2.4rem;
       }
-
       .contact {
         grid-template-columns: minmax(0, 1fr);
       }
-
       .steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-
       .grid-3 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -550,15 +443,12 @@
       .nav-links {
         display: none;
       }
-
       .hero {
         padding-top: 2rem;
       }
-
       .grid-3 {
         grid-template-columns: minmax(0, 1fr);
       }
-
       .steps {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -591,40 +481,17 @@
       <section class="hero">
         <div>
           <div class="eyebrow">
-            <span class="eyebrow-tag">Orionix AI</span>
-            Automatización de ventas y atención con IA.
+             <span class="eyebrow-tag">Orion – el arquitecto</span>
           </div>
           <h1 class="hero-title">
-            Convierte tus mensajes en ventas con <span>IA que responde, entiende y sigue al cliente</span>.
+            🌌 ORION – El Arquitecto de la Nueva Era Empresarial
           </h1>
           <p class="hero-sub">
-            Orionix AI conecta tus anuncios, formularios y WhatsApp en un solo sistema inteligente que atiende 24/7,
-            califica leads y agenda citas para tu equipo, sin que tengas que estar pegado al celular.
+            Nadie “tiene un ORION”. Cada empresa tiene las creaciones de ORION, hechas a medida, personalizadas,
+            únicas, irrepetibles. Con eso en mente, ORION no es un bot aislado: es el arquitecto que diseña
+            y construye sistemas de inteligencia hechos a la medida de cada negocio.
           </p>
-          <div class="hero-cta-row">
-            <a href="#contacto" class="btn-primary">
-              Quiero automatizar mi negocio
-            </a>
           </div>
-          <div class="hero-note">
-            <div class="hero-note-dot"></div>
-            <span>Ideal para clínicas, estéticas, suplementos, e-commerce y servicios profesionales.</span>
-          </div>
-          <div class="hero-bullets">
-            <div class="hero-bullet">
-              <div class="hero-bullet-dot"></div>
-              <div>Respuesta automática en segundos en WhatsApp y otros canales.</div>
-            </div>
-            <div class="hero-bullet">
-              <div class="hero-bullet-dot"></div>
-              <div>Seguimiento inteligente para que el cliente no se enfríe.</div>
-            </div>
-            <div class="hero-bullet">
-              <div class="hero-bullet-dot"></div>
-              <div>Integración con tu CRM o Google Sheets para ver todo en un solo lugar.</div>
-            </div>
-          </div>
-        </div>
 
         <aside class="hero-media">
           <div class="hero-media-inner">
@@ -637,17 +504,8 @@
       </section>
 
       <section id="orion-arquitecto">
-        <div class="section-header">
-          <p class="section-kicker">Orion – el arquitecto</p>
-          <h2 class="section-title">🌌 ORION – El Arquitecto de la Nueva Era Empresarial</h2>
-          <p class="section-desc">
-            Nadie “tiene un ORION”. Cada empresa tiene las creaciones de ORION, hechas a medida, personalizadas,
-            únicas, irrepetibles. Con eso en mente, ORION no es un bot aislado: es el arquitecto que diseña
-            y construye sistemas de inteligencia hechos a la medida de cada negocio.
-          </p>
-        </div>
-
         <div class="card" style="margin-bottom:1.1rem;">
+			<h3>☄️ ¿Quién es ORION?</h3>
           <p>
             ORION no es un bot.<br>
             No es un flujo.<br>
@@ -849,7 +707,7 @@
           </div>
           
           <div>
-            <form id="orionix-form" action="https://formsubmit.co/ajax/mauricioclementelli@gmail.com" method="POST">
+            <form id="orionix-form" action="https://formsubmit.co/ajax/mauricioclementelli@gmail.com" method="POST" autocomplete="off">
               <input type="hidden" name="_subject" value="Nuevo lead desde Orionix AI">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
@@ -927,16 +785,25 @@
   ></script>
   
   <script>
+    // NUEVO: Limpiar formulario al recargar la página
+    window.onload = function() {
+        const form = document.getElementById('orionix-form');
+        if (form) {
+            form.reset();
+        }
+    };
+
+    // Script de envío
     const form = document.getElementById('orionix-form');
     const successMessage = document.getElementById('success-message');
     const submitBtn = document.getElementById('submit-btn');
 
     form.addEventListener('submit', function(e) {
-      e.preventDefault(); // Evita que la página se recargue
+      e.preventDefault(); 
       
       const originalBtnText = submitBtn.innerText;
       submitBtn.innerText = "Enviando...";
-      submitBtn.classList.add('btn-loading'); // Deshabilita el botón visualmente
+      submitBtn.classList.add('btn-loading'); 
       
       const formData = new FormData(form);
 
@@ -949,11 +816,9 @@
       })
       .then(response => {
         if (response.ok) {
-          // ÉXITO: Ocultar formulario y mostrar mensaje bonito
           form.style.display = 'none';
           successMessage.style.display = 'block';
         } else {
-          // ERROR
           alert("Hubo un problema al enviar. Por favor escríbenos directo al WhatsApp.");
           submitBtn.innerText = originalBtnText;
           submitBtn.classList.remove('btn-loading');
@@ -969,6 +834,7 @@
   </script>
 </body>
 </html>
+
 
 
 
