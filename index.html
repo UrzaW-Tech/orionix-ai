@@ -132,6 +132,13 @@
       box-shadow: 0 18px 44px rgba(56, 189, 248, 0.7);
     }
 
+    /* Clase para cuando el botón está cargando */
+    .btn-loading {
+        opacity: 0.7;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
     .btn-secondary {
       padding: 0.55rem 1.1rem;
       border-radius: 999px;
@@ -401,31 +408,6 @@
       margin-bottom: 0.15rem;
     }
 
-    /* Video section (estilos quedan, sección fue eliminada del HTML) */
-    .video-section {
-      margin-top: 1.2rem;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 1));
-      padding: 1.3rem 1.2rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.4rem;
-      align-items: center;
-    }
-
-    .video-wrapper {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: black;
-    }
-
-    video {
-      width: 100%;
-      display: block;
-    }
-
     /* Contact */
     .contact {
       margin-top: 2.2rem;
@@ -478,6 +460,48 @@
       margin-top: 0.15rem;
     }
 
+    /* ESTILOS DEL MENSAJE DE ÉXITO (NUEVO) */
+    #success-message {
+        display: none; /* Oculto por defecto */
+        text-align: center;
+        padding: 3rem 1.5rem;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 12px;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    #success-message h3 {
+        color: var(--text);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #success-message p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .check-icon {
+        width: 60px;
+        height: 60px;
+        background: #22c55e;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto 1.5rem auto;
+        box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
     footer {
       padding: 2.3rem 0 1.6rem;
       font-size: 0.78rem;
@@ -507,10 +531,6 @@
 
       .hero {
         padding-top: 2.4rem;
-      }
-
-      .video-section {
-        grid-template-columns: minmax(0, 1fr);
       }
 
       .contact {
@@ -550,7 +570,7 @@
     <div class="container nav">
       <div class="nav-left">
         <div class="nav-logo-img">
-          <img src="logo-orionix.png" alt="Logo Orionix AI">
+          <img src="logo-orionix.png" alt="Logo Orionix AI" onerror="this.style.display='none'">
         </div>
         <div class="nav-brand">
           <span class="nav-brand-title">Orionix AI</span>
@@ -560,7 +580,6 @@
       <nav class="nav-links">
         <a href="#solucion">Solución</a>
         <a href="#casos-uso">Casos de uso</a>
-        <a href="#video">Demo</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <a href="#contacto" class="btn-primary">Agenda una llamada</a>
@@ -569,7 +588,6 @@
 
   <main>
     <div class="container">
-      <!-- HERO -->
       <section class="hero">
         <div>
           <div class="eyebrow">
@@ -586,8 +604,6 @@
           <div class="hero-cta-row">
             <a href="#contacto" class="btn-primary">
               Quiero automatizar mi negocio
-        
-            
             </a>
           </div>
           <div class="hero-note">
@@ -612,19 +628,14 @@
 
         <aside class="hero-media">
           <div class="hero-media-inner">
-            <!-- TU IMAGEN PRINCIPAL -->
-            <img src="hero-orionix.jpg" alt="Panel y cerebro digital de Orionix AI">
-            <div class="play-overlay">
-              <div class="play-button"></div>
-            </div>
+            <img src="hero-orionix.jpg" alt="Panel y cerebro digital de Orionix AI" onerror="this.src='https://via.placeholder.com/600x400/0f172a/38bdf8?text=Orionix+Interface'">
             <div class="hero-media-tag">
-            
+             Dashboard Inteligente
             </div>
           </div>
         </aside>
       </section>
 
-      <!-- ORION – ARQUITECTO -->
       <section id="orion-arquitecto">
         <div class="section-header">
           <p class="section-kicker">Orion – el arquitecto</p>
@@ -658,13 +669,6 @@
             <li>Bots de atención</li>
             <li>Bots de flujo y automatización profunda</li>
           </ul>
-          <p style="margin-top:0.6rem;">
-            Cada uno entrenado con el conocimiento específico del negocio. Cada uno diseñado como una pieza única,
-            tal como un arquitecto diseña edificios distintos según la necesidad del cliente.
-          </p>
-          <p style="margin-top:0.6rem; font-weight:600;">
-            ORION no te reemplaza. ORION te eleva.
-          </p>
         </div>
 
         <div class="card" style="margin-bottom:1.4rem;">
@@ -674,20 +678,6 @@
           </p>
           <p style="margin-top:0.4rem;">
             La pregunta es: <strong>¿estás avanzando con ella o te estás quedando atrás?</strong>
-          </p>
-          <p style="margin-top:0.4rem;">
-            ORIONIX AI no es una empresa más. Somos el equipo que está construyendo lo que otros empezarán a hacer
-            recién en unos años.
-          </p>
-          <p style="margin-top:0.4rem;">
-            Nosotros vamos hacia adelante.<br>
-            Nosotros abrimos camino.<br>
-            Nosotros marcamos la innovación.
-          </p>
-          <p style="margin-top:0.6rem;">
-            Y hoy, tú tienes la oportunidad de aprovechar esta ventana histórica:
-            incorporar IA real, profunda, personalizada, centrada en resultados y diseñada por ORION,
-            el arquitecto del futuro empresarial.
           </p>
         </div>
 
@@ -703,56 +693,29 @@
             <h3>Misión del Arquitecto</h3>
             <p>
               Diseñar e implementar bots y flujos de automatización máxima para todos los sectores, entrenados con
-              el ADN de cada negocio, para lograr operaciones veloces, ordenadas y escalables.
+              el ADN de cada negocio.
             </p>
           </div>
           <div class="card">
-            <h3>Visión del Futuro Empresarial</h3>
+            <h3>Visión del Futuro</h3>
             <p>
               Ser la fuerza que acelere la transformación digital en empresas de todo tamaño, construyendo la próxima
-              generación de negocios autónomos en Latinoamérica.
+              generación de negocios autónomos.
             </p>
           </div>
-        </div>
-
-        <div class="card" style="margin-bottom:1.2rem;">
-          <h3>Seguridad y privacidad como ley</h3>
-          <p style="margin-top:0.4rem;">
-            En ORIONIX AI la seguridad no es un servicio, es un compromiso. Todos los sistemas creados por ORION
-            se construyen con:
-          </p>
-          <ul style="margin-top:0.35rem;">
-            <li>Encriptación empresarial</li>
-            <li>Accesos controlados</li>
-            <li>Protocolos privados</li>
-            <li>Datos protegidos</li>
-            <li>Eliminación total bajo orden del cliente</li>
-          </ul>
-          <p style="margin-top:0.6rem;">
-            Lo tuyo es tuyo.<br>
-            Tu información no se toca.<br>
-            Tu privacidad es ley.
-          </p>
         </div>
 
         <div class="card">
           <h3>Mensaje final</h3>
           <p style="margin-top:0.4rem;">
-            El tiempo no espera.<br>
-            La tecnología no espera.<br>
-            El futuro tampoco.
+            El tiempo no espera. La tecnología no espera. El futuro tampoco.
           </p>
           <p style="margin-top:0.6rem; font-weight:600;">
-            ORION ya está avanzando.<br>
-            La pregunta es:
-          </p>
-          <p style="margin-top:0.4rem; font-weight:600;">
             ¿Te sumas ahora, o te quedas esperando a que tu competencia lo haga primero?
           </p>
         </div>
       </section>
 
-      <!-- SOLUCIÓN -->
       <section id="solucion">
         <div class="section-header">
           <p class="section-kicker">La solución</p>
@@ -770,7 +733,6 @@
             <ul>
               <li>Respuestas naturales basadas en tu negocio y tus productos.</li>
               <li>Captura datos clave: nombre, teléfono, interés, ciudad.</li>
-              <li>Enrutamiento a un humano cuando el cliente lo pide.</li>
             </ul>
           </div>
           <div class="card">
@@ -778,8 +740,7 @@
             <p>No vuelvas a perder una venta por falta de seguimiento.</p>
             <ul>
               <li>Mensajes de recordatorio automatizados.</li>
-              <li>Secuencias según la etapa del cliente (frío, tibio, caliente).</li>
-              <li>Alertas a tu equipo cuando alguien está listo para comprar.</li>
+              <li>Secuencias según la etapa del cliente.</li>
             </ul>
           </div>
           <div class="card">
@@ -788,111 +749,107 @@
             <ul>
               <li>Integración con hojas de cálculo o CRM.</li>
               <li>Reporte de leads, citas y ventas cerradas.</li>
-              <li>Aprendizaje continuo para mejorar la conversión.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- CASOS DE USO -->
       <section id="casos-uso">
         <div class="section-header">
           <p class="section-kicker">Casos de uso</p>
           <h2 class="section-title">Pensado para negocios que reciben muchos mensajes al día.</h2>
-          <p class="section-desc">
-            Orionix AI se adapta a distintos modelos: desde clínicas que agendan citas hasta tiendas online que quieren
-            responder rápido y vender más sin aumentar personal.
-          </p>
         </div>
 
         <div class="steps">
           <div class="step-card">
             <div class="step-number">1</div>
             <div class="step-title">Clínicas y estéticas</div>
-            <p>Agendamiento automático de citas, recordatorios y pre-clasificación de pacientes según el servicio que buscan.</p>
+            <p>Agendamiento automático de citas, recordatorios y pre-clasificación de pacientes.</p>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
             <div class="step-title">Suplementos y bienestar</div>
-            <p>Respuestas sobre productos, seguimiento post-venta y ofertas basadas en objetivos del cliente (peso, energía, salud).</p>
+            <p>Respuestas sobre productos, seguimiento post-venta y ofertas basadas en objetivos.</p>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
             <div class="step-title">E-commerce</div>
-            <p>Atención sobre envíos, cambios, stock y acompañamiento hasta que el usuario finaliza la compra.</p>
+            <p>Atención sobre envíos, cambios, stock y acompañamiento hasta la compra.</p>
           </div>
           <div class="step-card">
             <div class="step-number">4</div>
             <div class="step-title">Servicios profesionales</div>
-            <p>Filtrado de leads, agendamiento de reuniones y envío automático de información sobre tus servicios.</p>
+            <p>Filtrado de leads, agendamiento de reuniones y envío automático de información.</p>
           </div>
         </div>
       </section>
 
-      <!-- CONTACTO -->
       <section id="contacto">
         <div class="contact">
           <div>
             <h2 class="section-title">Agenda una llamada estratégica con Orionix AI.</h2>
             <p class="section-desc">
-              Cuéntanos qué vendes, cuántos mensajes recibes al día y qué objetivo tienes (más ventas, más citas,
-              menos carga operativa). Te proponemos una arquitectura de automatización a tu medida.
+              Cuéntanos qué vendes, cuántos mensajes recibes al día y qué objetivo tienes. Te proponemos una arquitectura de automatización a tu medida.
             </p>
             <p class="hint">
-              Respondemos en menos de 24 horas hábiles. No es una llamada de venta agresiva, es una sesión para entender tu negocio.
+              Respondemos en menos de 24 horas hábiles.
             </p>
           </div>
+          
           <div>
-            <form
-  action="https://formsubmit.co/mauricioclementelli@gmail.com"
-  method="POST"
->
-  <input type="hidden" name="_subject" value="Nuevo lead desde Orionix AI">
-  <input type="hidden" name="_captcha" value="false">
+            <form id="orionix-form" action="https://formsubmit.co/ajax/mauricioclementelli@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Nuevo lead desde Orionix AI">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
 
-  <div>
-    <label for="nombre">Nombre completo</label>
-    <input id="nombre" name="nombre" type="text" placeholder="Ej. Juan Pérez" required />
-  </div>
-  <div>
-    <label for="whatsapp">WhatsApp</label>
-    <input id="whatsapp" name="whatsapp" type="tel" placeholder="+591 70000000" required />
-  </div>
-  <div>
-    <label for="tipo">Tipo de negocio</label>
-    <select id="tipo" name="tipo" required>
-      <option value="">Selecciona una opción</option>
-      <option value="clinica">Clínica / Estética</option>
-      <option value="suplementos">Suplementos / Bienestar</option>
-      <option value="ecommerce">E-commerce</option>
-      <option value="servicios">Servicios profesionales</option>
-      <option value="otro">Otro</option>
-    </select>
-  </div>
-  <div>
-    <label for="mensaje">¿Qué te gustaría automatizar primero?</label>
-    <textarea
-      id="mensaje"
-      name="mensaje"
-      placeholder="Ej. Respuesta a leads de campañas, agendamiento de citas, seguimiento de ventas, etc."
-      required
-    ></textarea>
-  </div>
+              <div>
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Ej. Juan Pérez" required />
+              </div>
+              <div>
+                <label for="whatsapp">WhatsApp</label>
+                <input id="whatsapp" name="whatsapp" type="tel" placeholder="+591 70000000" required />
+              </div>
+              <div>
+                <label for="tipo">Tipo de negocio</label>
+                <select id="tipo" name="tipo" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="clinica">Clínica / Estética</option>
+                  <option value="suplementos">Suplementos / Bienestar</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="servicios">Servicios profesionales</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <div>
+                <label for="mensaje">¿Qué te gustaría automatizar primero?</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  placeholder="Ej. Respuesta a leads de campañas, agendamiento de citas..."
+                  required
+                ></textarea>
+              </div>
 
-  <button type="submit" class="btn-primary" style="width:100%; margin-top:0.3rem;">
-    Enviar y coordinar llamada
-  </button>
+              <button type="submit" id="submit-btn" class="btn-primary" style="width:100%; margin-top:0.3rem;">
+                Enviar y coordinar llamada
+              </button>
 
-  <p class="hint">
-    ¿Prefieres escribir directo? Contáctanos por WhatsApp al <strong>+591 75532333</strong>
-  </p>
-</form>
+              <p class="hint">
+                ¿Prefieres escribir directo? Contáctanos por WhatsApp al <strong>+591 75532333</strong>
+              </p>
+            </form>
 
+            <div id="success-message">
+                <div class="check-icon">✓</div>
+                <h3>¡Gracias por contactarnos!</h3>
+                <p>Hemos recibido tus datos correctamente.</p>
+                <p style="margin-top: 10px;">El arquitecto <strong>Orion</strong> analizará tu solicitud y te contactaremos vía WhatsApp muy pronto.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- FOOTER -->
       <footer>
         <div class="footer-inner">
           <div>© <span id="year"></span> Orionix AI. Todos los derechos reservados.</div>
@@ -917,8 +874,50 @@
     data-id="978ea8ec-35be-4577-a1f7-c22a03ae9dfc"
   ></script>
   
+  <script>
+    const form = document.getElementById('orionix-form');
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que la página se recargue
+      
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Enviando...";
+      submitBtn.classList.add('btn-loading'); // Deshabilita el botón visualmente
+      
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // ÉXITO: Ocultar formulario y mostrar mensaje bonito
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+        } else {
+          // ERROR
+          alert("Hubo un problema al enviar. Por favor escríbenos directo al WhatsApp.");
+          submitBtn.innerText = originalBtnText;
+          submitBtn.classList.remove('btn-loading');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Hubo un error de conexión.");
+        submitBtn.innerText = originalBtnText;
+        submitBtn.classList.remove('btn-loading');
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
 
